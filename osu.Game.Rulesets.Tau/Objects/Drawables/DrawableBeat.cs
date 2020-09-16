@@ -39,9 +39,17 @@ namespace osu.Game.Rulesets.Tau.Objects.Drawables
                     Alpha = 0.05f,
                     Children = new Drawable[]
                     {
-                        new Box
+                        new Container
                         {
-                            RelativeSizeAxes = Axes.Both
+                            RelativeSizeAxes = Axes.Both,
+                            Masking = true,
+                            BorderColour = Color4.White,
+                            BorderThickness = 5,
+                            Child = new Box {
+                                Alpha= 0,
+                                RelativeSizeAxes = Axes.Both,
+                                AlwaysPresent = true,
+                            }
                         },
                         IntersectArea = new Container
                         {
